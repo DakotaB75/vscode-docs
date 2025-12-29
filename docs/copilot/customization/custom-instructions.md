@@ -34,6 +34,35 @@ Whitespace between instructions is ignored, so the instructions can be written a
 
 To reference specific context in your instructions, such as files or URLs, you can use Markdown links.
 
+## Instruction scopes
+
+Custom instructions can be defined at different scopes, which determines where they are available and how broadly they apply.
+
+### User-level instructions
+User-level instruction files are stored in the current VS Code profile and are available across multiple workspaces. Use this scope for personal coding preferences or guidelines that you want applied consistently in all projects.
+
+### Workspace-level instructions
+Workspace-level instruction files are stored within a workspace and only apply to that specific project. Use this scope for project-specific conventions, architectural rules, or team-agreed guidelines that should be shared with collaborators.
+
+## When instructions are applied
+
+Custom instructions can be applied either automatically or manually, depending on their configuration and usage.
+
+### Automatic application
+Instructions are applied automatically when:
+- A `.github/copilot-instructions.md` file is present in the workspace.
+- An `.instructions.md` file includes an `applyTo` glob pattern that matches the files being created or modified.
+- An `AGENTS.md` file is detected and supported features are enabled.
+
+Automatic instructions are typically applied during file creation or modification scenarios.
+
+### Manual application
+Any instructions file can be manually attached to a chat request by using **Add Context > Instructions** in the Chat view. Manual attachment is useful for one-off tasks or when instructions should not apply by default.
+
+### Unsupported instruction scopes
+
+Repository-level instructions are not supported in VS Code. Unlike GitHub.com, VS Code does not apply instructions automatically based on repository-level configuration alone. Instructions must be defined at the user or workspace level to be applied.
+
 ## Custom instructions examples
 
 The following examples demonstrate how to use custom instructions. For more community-contributed examples, see the [Awesome Copilot repository](https://github.com/github/awesome-copilot/tree/main).
