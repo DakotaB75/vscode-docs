@@ -25,10 +25,14 @@ Here is a [Language Configuration sample](https://github.com/microsoft/vscode-ex
 
 ```json
 {
+ {
   "comments": {
-    "lineComment": "//",
+    "lineComment": {
+      "comment": "//"
+    },
     "blockComment": ["/*", "*/"]
-  },
+  }
+  }
   "brackets": [["{", "}"], ["[", "]"], ["(", ")"]],
   "autoClosingPairs": [
     { "open": "{", "close": "}" },
